@@ -1,5 +1,19 @@
 # CHANGELOG FOR `1.14.X`
 
+## v1.14.12 (2025-10-22)
+
+#### Details
+
+- [#18371](https://github.com/Sylius/Sylius/pull/18371) Update validation group in checkout complete ([@tomkalon](https://github.com/tomkalon))
+- [#18380](https://github.com/Sylius/Sylius/pull/18380) Remove product images duplication ([@Glancu](https://github.com/Glancu))
+- [#18418](https://github.com/Sylius/Sylius/pull/18418) Revert "[AdminBundle] Hide Impersonate button when user shop account is locked" ([@Rafikooo](https://github.com/Rafikooo))
+- [#18399](https://github.com/Sylius/Sylius/pull/18399) Fix invalid property types for 'translations' ([@rust-le](https://github.com/rust-le))
+- [#18419](https://github.com/Sylius/Sylius/pull/18419) Bugfix/invalid credentials message is not translated during ajax login ([@michalkaczmarek-bitbag](https://github.com/michalkaczmarek-bitbag))
+- [#18411](https://github.com/Sylius/Sylius/pull/18411) Bugfix/wrong assertion in class zone eligible checker ([@michalkaczmarek-bitbag](https://github.com/michalkaczmarek-bitbag))
+- [#18406](https://github.com/Sylius/Sylius/pull/18406) Fix: Admin taxon update: Cannot set child as parent to node ([@Glancu](https://github.com/Glancu))
+- [#18444](https://github.com/Sylius/Sylius/pull/18444) [CS][DX] Refactor
+- [#18459](https://github.com/Sylius/Sylius/pull/18459) Update BuildTestAppAction to v3.0.1 ([@Rafikooo](https://github.com/Rafikooo))
+
 ## v1.14.11 (2025-09-25)
 
 #### Details
