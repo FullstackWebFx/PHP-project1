@@ -55,17 +55,6 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?charset=utf8mb4&serverVersion=${{ matrix.mysql }}"
 
         steps:
-            -   name: Set variables
-                shell: bash
-                env:
-                    BRANCH: ${{ inputs.branch }}
-                run: |
-                    if [ "$BRANCH" == "1.12" ]; then
-                        echo "USE_LEGACY_POSTGRES_SETUP=yes" >> $GITHUB_ENV
-                    else
-                        echo "USE_LEGACY_POSTGRES_SETUP=no" >> $GITHUB_ENV
-                    fi
-
             -   name: "Checkout (With Branch)"
                 if: "${{ inputs.branch != '' }}"
                 uses: actions/checkout@v4
@@ -81,14 +70,13 @@ jobs:
                 run: composer require --no-update --no-scripts --no-interaction "twig/twig:${{ matrix.twig }}"
 
             -   name: Build application
-                uses: SyliusLabs/BuildTestAppAction@v2.3
+                uses: SyliusLabs/BuildTestAppAction@v3.0.1
                 with:
                     build_type: "sylius"
                     cache_key:  "${{ github.run_id }}-${{ runner.os }}-${{ hashFiles('composer.json') }}-symfony-${{ matrix.symfony }}-api-platform-${{ matrix.api-platform }}"
                     cache_restore_key: "${{ github.run_id }}-${{ runner.os }}-${{ hashFiles('composer.json') }}-symfony-${{ matrix.symfony }}-api-platform-${{ matrix.api-platform }}"
                     e2e: "yes"
                     database_version: ${{ matrix.mysql }}
-                    legacy_postgresql_setup: ${{ env.USE_LEGACY_POSTGRES_SETUP }}
                     php_version: ${{ matrix.php }}
                     symfony_version: ${{ matrix.symfony }}
 
@@ -132,17 +120,6 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?charset=utf8mb4&serverVersion=${{ matrix.mysql }}"
 
         steps:
-            -   name: Set variables
-                shell: bash
-                env:
-                    BRANCH: ${{ inputs.branch }}
-                run: |
-                    if [ "$BRANCH" == "1.12" ]; then
-                        echo "USE_LEGACY_POSTGRES_SETUP=yes" >> $GITHUB_ENV
-                    else
-                        echo "USE_LEGACY_POSTGRES_SETUP=no" >> $GITHUB_ENV
-                    fi
-
             -   name: "Checkout (With Branch)"
                 if: "${{ inputs.branch != '' }}"
                 uses: actions/checkout@v4
@@ -169,7 +146,7 @@ jobs:
                 run: composer require --no-update --no-scripts --no-interaction "twig/twig:${{ matrix.twig }}"
 
             -   name: Build application
-                uses: SyliusLabs/BuildTestAppAction@v2.3
+                uses: SyliusLabs/BuildTestAppAction@v3.0.1
                 with:
                     build_type: "sylius"
                     cache_key:  "${{ github.run_id }}-${{ runner.os }}-${{ hashFiles('composer.json') }}-symfony-${{ matrix.symfony }}-api-platform-${{ matrix.api-platform }}"
@@ -177,7 +154,6 @@ jobs:
                     e2e: "yes"
                     e2e_js: "yes"
                     database_version: ${{ matrix.mysql }}
-                    legacy_postgresql_setup: ${{ env.USE_LEGACY_POSTGRES_SETUP }}
                     php_version: ${{ matrix.php }}
                     symfony_version: ${{ matrix.symfony }}
                     node_version: "20.x"
@@ -213,17 +189,6 @@ jobs:
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?charset=utf8mb4&serverVersion=${{ matrix.mysql }}"
 
         steps:
-            -   name: Set variables
-                shell: bash
-                env:
-                    BRANCH: ${{ inputs.branch }}
-                run: |
-                    if [ "$BRANCH" == "1.12" ]; then
-                        echo "USE_LEGACY_POSTGRES_SETUP=yes" >> $GITHUB_ENV
-                    else
-                        echo "USE_LEGACY_POSTGRES_SETUP=no" >> $GITHUB_ENV
-                    fi
-
             -   name: "Checkout (With Branch)"
                 if: "${{ inputs.branch != '' }}"
                 uses: actions/checkout@v4
@@ -250,7 +215,7 @@ jobs:
                 run: composer require --no-update --no-scripts --no-interaction "twig/twig:${{ matrix.twig }}"
 
             -   name: Build application
-                uses: SyliusLabs/BuildTestAppAction@v2.3
+                uses: SyliusLabs/BuildTestAppAction@v3.0.1
                 with:
                     build_type: "sylius"
                     cache_key:  "${{ github.run_id }}-${{ runner.os }}-${{ hashFiles('composer.json') }}-symfony-${{ matrix.symfony }}-api-platform-${{ matrix.api-platform }}"
@@ -258,7 +223,6 @@ jobs:
                     e2e: "yes"
                     e2e_js: "yes"
                     database_version: ${{ matrix.mysql }}
-                    legacy_postgresql_setup: ${{ env.USE_LEGACY_POSTGRES_SETUP }}
                     php_version: ${{ matrix.php }}
                     symfony_version: ${{ matrix.symfony }}
                     node_version: "20.x"
