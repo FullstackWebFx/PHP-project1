@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ###> project files ###
 /behat.yml
 /composer.lock
@@ -64,3 +65,23 @@ package-lock.json
 /config/jwt/*.pem
 !/config/jwt/*-test.pem
 ###< lexik/jwt-authentication-bundle ###
+=======
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+>>>>>>> 0d3c11fd14cf7fed464bc3fcc3d4fcd19b03a9d0
